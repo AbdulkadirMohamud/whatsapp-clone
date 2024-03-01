@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import ContactList from "./components/ContactList";
+import ConversationList from "./components/ConversationList";
+import ChatIcon from "@mui/icons-material/Chat";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import MenuIcon from "@mui/icons-material/Menu";
+import GroupIcon from "@mui/icons-material/Group";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  background: #f8f9fb;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <div>
+        {/* Corrected style object syntax */}
+        <ChatIcon style={{ color: "black", fontSize: 10 }} />
+        <WhatsAppIcon style={{ color: "green", fontSize: 18 }} />
+        <MenuIcon style={{ color: "black", fontSize: 18 }} />
+        <GroupIcon style={{ color: "black", fontSize: 18 }} />
+      </div>
+      <ContactList />
+      <ConversationList />
+    </Container>
   );
 }
 
